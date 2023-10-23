@@ -16,6 +16,7 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.4.10",
     "eslint": "^8",
     "eslint-config-next": "13.5.6",
     "husky": "^8.0.3",
