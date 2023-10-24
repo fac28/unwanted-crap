@@ -9,6 +9,7 @@ export default async function Home() {
   allUniqueNames.forEach((productName) => {
       productsInfo.push(getProductInfo(productName))
     })
+  
 
   return (
     <main>
@@ -17,6 +18,7 @@ export default async function Home() {
     </main>
   )
 }
+
 
 // {
 //   id: 4,

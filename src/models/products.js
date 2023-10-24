@@ -2,7 +2,13 @@ const db = require('../../database/db.js');
 
 // list unique product names
 const get_unique_product_names = db.prepare(/*sql*/ `
-    SELECT DISTINCT name, price, description, size, colour, image
+    SELECT
+      DISTINCT name,
+      price,
+      description,
+      size,
+      colour,
+      image
     FROM products
 `);
 
@@ -48,7 +54,8 @@ const get_product_data = db.prepare(/*sql*/ `
         price,
         description,
         size,
-        colour
+        colour,
+        image
     FROM products
     WHERE id = $id
 `);
