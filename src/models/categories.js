@@ -1,10 +1,12 @@
-import db from '../../database/db.js';
+const db = require('../../database/db.js');
 
 const get_all_categories = db.prepare(/*sql*/ `
-select id, name
-FROM categories`)
+    select id, name
+    FROM categories
+`);
 
-export function retrieveAllCategories() {
-    return get_all_categories.all()
+function retrieveAllCategories() {
+  return get_all_categories.all();
 }
 
+module.exports = { retrieveAllCategories };
