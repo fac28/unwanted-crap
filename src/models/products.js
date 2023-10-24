@@ -1,24 +1,33 @@
-import db from "../../database/db.js";
+const db = require("../../database/db.js");
 
-const get_all_products = db.prepare(/*sql*/ `
-    SELECT id, name, price, description, size, colour
+// list unqiue product names
+const get_unique_product_names = db.prepare(/*sql*/ `
+    SELECT DISTINCT name
     FROM products
 `);
 
-export function retrieveAllProducts() {
-  return get_all_products.all();
+function retrieveUniqueProductNames() {
+  return get_unique_product_names.all().map(row => row.name);
 }
 
-const productName = 'Left Airpod';
+// get info of the first variant of a product
+const get_first_variant = db.prepare(/*sql*/`
+    SELECT id, name, price, image
+      FROM products
+      WHERE name = ?
+      LIMIT 1;
+`);
 
-// Query to retrieve all variants of the product
-const query = `
-  SELECT id, name, price, description, size, colour
-  FROM products
-  WHERE name = ?;
-`;
+function getProductInfo(productName){
+  return get_first_variant.get(productName);
+}
 
-const variants = db.prepare(query).all(productName);
+// loop through unique products
+const uniqueProductNames = retrieveUniqueProductNames();
+uniqueProductNames.forEach((productName) => {
+  const productInfo = getProductInfo(productName);
+  console.log(productInfo);
+});
 
 // Retrieve all product IDs
 const get_all_product_ids = db.prepare(/*sql*/ `
@@ -26,11 +35,10 @@ const get_all_product_ids = db.prepare(/*sql*/ `
     FROM products
 `);
 
-export function getAllProductIds() {
+function getAllProductIds() {
   const productIds = get_all_product_ids.all().map((row) => row.id);
   return productIds;
 }
-
 
 // Retrieve specific product data
 const get_product_data = db.prepare(/*sql*/ `
@@ -45,6 +53,14 @@ const get_product_data = db.prepare(/*sql*/ `
     WHERE id = $id
 `);
 
-export function retrieveProductData(id) {
+function retrieveProductData(id) {
   return get_product_data.get({ id });
 }
+
+module.exports = { 
+  retrieveUniqueProductNames, 
+  getProductInfo,
+  getAllProductIds,
+  getAllProductIds,
+  retrieveProductData
+};
