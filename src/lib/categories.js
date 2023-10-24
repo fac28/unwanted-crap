@@ -1,8 +1,8 @@
-import db from '../database/db.js';
+import db from '../../database/db.js';
 
 const get_all_categories = db.prepare(/*sql*/ `
 select id, name
-FROM category`)
+FROM categories`)
 
 export function retrieveAllCategories() {
     return get_all_categories.all()

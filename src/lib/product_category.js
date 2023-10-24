@@ -1,4 +1,4 @@
-import db from '../database/db.js';
+import db from '../../database/db.js';
 
 const get_products_by_category = db.prepare(/*sql*/ `
 select p.id, p.name, p.price, p.description, p.size, p.colour
