@@ -9,4 +9,4 @@ function retrieveAllCategories() {
   return get_all_categories.all();
 }
 
-module.exports = {retrieveAllCategories}
+module.exports = { retrieveAllCategories };

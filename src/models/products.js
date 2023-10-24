@@ -1,4 +1,4 @@
-const db = require("../../database/db.js");
+const db = require('../../database/db.js');
 
 // list unqiue product names
 const get_unique_product_names = db.prepare(/*sql*/ `
@@ -7,18 +7,18 @@ const get_unique_product_names = db.prepare(/*sql*/ `
 `);
 
 function retrieveUniqueProductNames() {
-  return get_unique_product_names.all().map(row => row.name);
+  return get_unique_product_names.all().map((row) => row.name);
 }
 
 // get info of the first variant of a product
-const get_first_variant = db.prepare(/*sql*/`
+const get_first_variant = db.prepare(/*sql*/ `
     SELECT id, name, price, image
       FROM products
       WHERE name = ?
       LIMIT 1;
 `);
 
-function getProductInfo(productName){
+function getProductInfo(productName) {
   return get_first_variant.get(productName);
 }
 
@@ -57,10 +57,10 @@ function retrieveProductData(id) {
   return get_product_data.get({ id });
 }
 
-module.exports = { 
-  retrieveUniqueProductNames, 
+module.exports = {
+  retrieveUniqueProductNames,
   getProductInfo,
   getAllProductIds,
   getAllProductIds,
-  retrieveProductData
+  retrieveProductData,
 };
