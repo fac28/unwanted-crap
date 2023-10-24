@@ -32,7 +32,7 @@ const reducer = (state, action) => {
     case "REMOVE":
       return { ...state, articles: state.articles.filter(article => article["name"] != action.articleName) };
     case "RESET":
-      return { ...state, articles: [] };
+      return {articles: [] };
     default:
       return state;
   }
