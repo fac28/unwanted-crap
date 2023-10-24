@@ -9,6 +9,16 @@ export function retrieveAllProducts() {
   return get_all_products.all();
 }
 
+const productName = 'Left Airpod';
+
+// Query to retrieve all variants of the product
+const query = `
+  SELECT id, name, price, description, size, colour
+  FROM products
+  WHERE name = ?;
+`;
+
+const variants = db.prepare(query).all(productName);
 
 // Retrieve all product IDs
 const get_all_product_ids = db.prepare(/*sql*/ `

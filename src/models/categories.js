@@ -8,5 +8,3 @@ export function retrieveAllCategories() {
     return get_all_categories.all()
 }
 
-
-
