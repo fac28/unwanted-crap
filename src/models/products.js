@@ -1,13 +1,20 @@
 const db = require('../../database/db.js');
 
-// list unqiue product names
+// list unique product names
 const get_unique_product_names = db.prepare(/*sql*/ `
-    SELECT DISTINCT name
+    SELECT DISTINCT name, price, description, size, colour, image
     FROM products
 `);
 
 function retrieveUniqueProductNames() {
   return get_unique_product_names.all().map((row) => row.name);
+}
+
+function retrieveUniqueProducts() {
+  const uniqueProducts = get_unique_product_names.all();
+  return uniqueProducts.map((row) => ({
+    ...row,
+  }));
 }
 
 // get info of the first variant of a product
@@ -21,13 +28,6 @@ const get_first_variant = db.prepare(/*sql*/ `
 function getProductInfo(productName) {
   return get_first_variant.get(productName);
 }
-
-// loop through unique products
-const uniqueProductNames = retrieveUniqueProductNames();
-uniqueProductNames.forEach((productName) => {
-  const productInfo = getProductInfo(productName);
-  // console.log(productInfo);
-});
 
 // Retrieve all product IDs
 const get_all_product_ids = db.prepare(/*sql*/ `
@@ -63,4 +63,5 @@ module.exports = {
   getAllProductIds,
   getAllProductIds,
   retrieveProductData,
+  retrieveUniqueProducts
 };
