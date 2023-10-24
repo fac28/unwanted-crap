@@ -26,7 +26,7 @@ function getProductInfo(productName) {
 const uniqueProductNames = retrieveUniqueProductNames();
 uniqueProductNames.forEach((productName) => {
   const productInfo = getProductInfo(productName);
-  console.log(productInfo);
+  // console.log(productInfo);
 });
 
 // Retrieve all product IDs
