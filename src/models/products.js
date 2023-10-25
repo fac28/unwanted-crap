@@ -10,6 +10,7 @@ const get_unique_product_names = db.prepare(/*sql*/ `
       colour,
       image
     FROM products
+    GROUP BY name
 `);
 
 function retrieveUniqueProductNames() {
