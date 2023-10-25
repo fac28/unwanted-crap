@@ -1,6 +1,6 @@
-import { retrieveProductData } from "@/models/products";
-import Image from "next/image";
-import Link from "next/link";
+import { retrieveProductData } from '@/models/products';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function VariantDetail({ params }) {
   const variantDetails = retrieveProductData(params.variantId);
