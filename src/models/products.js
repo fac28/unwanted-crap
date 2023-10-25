@@ -11,6 +11,7 @@ const get_unique_product = db.prepare(/*sql*/ `
       image
     FROM products
     GROUP BY name
+    ORDER by id
 `);
 
 function retrieveUniqueProductNames() {
