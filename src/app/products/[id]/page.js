@@ -1,10 +1,12 @@
-import { retrieveUniqueProducts } from "@/models/products";
-import { retrieveVariants, retrieveVariantDetails } from "@/models/variants";
-import Image from "next/image";
-import Link from "next/link";
+import { retrieveUniqueProducts } from '@/models/products';
+import {
+  retrieveVariants,
+  retrieveVariantDetails,
+} from '@/models/variants';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ProductDetail({ params }) {
-
   // Retrieve unique product information
   const productInfo = retrieveUniqueProducts();
 
@@ -39,7 +41,7 @@ export default function ProductDetail({ params }) {
           {allVariants.map((variant) => (
             <li key={variant.id}>
               <Link href={`/products/${params.id}/${variant.id}`}>
-                <div> 
+                <div>
                   <p>Colour: {variant.colour}</p>
                   <Image
                     src={variant.image}
