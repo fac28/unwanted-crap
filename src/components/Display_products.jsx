@@ -31,6 +31,7 @@ export const Display_products = ({ productsInfo }) => {
             <p>{product.price}</p>
             <button onClick={() => addToBasket(product)}>Buy</button>
           </Link>
+
         </div>
       ))}
     </div>
