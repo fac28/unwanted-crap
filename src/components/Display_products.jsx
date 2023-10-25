@@ -25,7 +25,7 @@ export const Display_products = ({ productsInfo }) => {
       <div className="search">
         <input
           type="text"
-          placeholder="Search by product name"
+          placeholder="🔎         Search"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />

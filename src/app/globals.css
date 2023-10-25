@@ -196,14 +196,15 @@ input[type="text"] {
   margin:10px;
   padding: 8px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 15px;
   font-size: 16px;
   outline: none;
-  transition: border 0.2s;
+  background-color: #cccccc81;
+  transition: border .2s;
 }
 
 input[type="text"]:focus {
-  border: 1px solid #007bff;
+  background-color: #ccccccd8;
 }
 
 /* @media (prefers-color-scheme: dark) {
