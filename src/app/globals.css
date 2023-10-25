@@ -201,14 +201,14 @@ input[type="text"]:focus {
   border: 1px solid #007bff;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
   h2, p {
     color: whitesmoke;
   }
-}
+} */
 
 @media (max-width: 768px) {
 
