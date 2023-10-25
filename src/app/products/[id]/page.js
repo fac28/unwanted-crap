@@ -34,6 +34,7 @@ export default function ProductDetail({ params }) {
   return (
     <div className="card-details">
       <h1>{selectedProduct.name}</h1>
+      <Link href={`/`}>All products</Link>
       <p>Price: £{selectedProduct.price}</p>
       <p>Description: {selectedProduct.description}</p>
       {hasVariants ? (

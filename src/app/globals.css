@@ -139,12 +139,12 @@ body {
   margin-top: 1rem;
 }
 
-li {
+.card-details li {
   list-style: none;
   margin-bottom: 0.5rem;
 }
 
-a {
+.card-details a {
   color: inherit;
   text-decoration: underline;
 }
@@ -172,6 +172,11 @@ a {
 
 .card-product .card-product-infos {
   padding: 16px;
+  margin: none;
+}
+
+.card a {
+  text-decoration: none;
 }
 
 .variants {
