@@ -93,8 +93,23 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  margin: 0 1rem;
+
 }
 
+.card {
+  display:grid;
+  border-radius: var(--border-radius);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 2em 2em;
+  justify-items: stretch;
+  grid-template-areas:
+    ". ."
+    ". ."
+    ". .";
+  margin: 1rem 0;
+}
 a {
   color: inherit;
   text-decoration: none;
