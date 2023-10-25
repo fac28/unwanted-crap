@@ -2,21 +2,21 @@
 
 import Image from 'next/image';
 import { useContext } from 'react';
-
 import { BasketContext } from '@/context/basket.context';
+
+//Generating unique keys
+const { v4: uuidv4 } = require('uuid');
 
 export const Display_products = ({ productsInfo }) => {
   const { dispatch } = useContext(BasketContext);
 
   const addToBasket = (product) => {
     dispatch({ type: 'ADD', article: product });
-    console.log(`add product to basket`);
-    console.log(product);
   };
   return (
     <div className="card">
       {productsInfo.map((product) => (
-        <div key={product.id}>
+        <div key={uuidv4()}>
           <Image
             priority
             src={product.image}
