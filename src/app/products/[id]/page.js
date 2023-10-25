@@ -44,7 +44,7 @@ export default function ProductDetail({ params }) {
             <Image
               src={allVariants[0].image}
               alt={allVariants[0].name}
-              width={200}
+              width={100}
               height={100}
             />
           </div>

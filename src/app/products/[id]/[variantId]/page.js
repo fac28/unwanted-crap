@@ -19,7 +19,7 @@ export default function VariantDetail({ params }) {
       <Image
         src={variantDetails.image}
         alt={variantDetails.name}
-        width={200}
+        width={100}
         height={100}
       />
     </div>

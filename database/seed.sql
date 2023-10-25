@@ -11,10 +11,10 @@ VALUES
 -- Insert Products
 INSERT INTO products (name, price, description, size, colour, image)
 VALUES
-    ('Left Airpod', 49.99, 'A single airpod', NULL, 'White', '/temp.jpg'),
-    ('Left Airpod', 49.99, 'A single airpod', NULL, 'Black', '/temp.jpg'),
-    ('Stained T-Shirt', 9.99, 'Comfortable cotton T-shirt', 'Medium', 'Red', '/temp.jpg'),
-    ('Rainbow Unicorn Slippers', 19.99, 'Slippers that make you feel like you are walking on rainbows', 'One Size Fits All', 'Rainbow', '/temp.jpg');
+    ('Left Airpod', 49.99, 'A single airpod', NULL, 'White', '/1.jpg'),
+    ('Left Airpod', 49.99, 'A single airpod', NULL, 'Black', '/2.jpg'),
+    ('Stained T-Shirt', 9.99, 'Comfortable cotton T-shirt', 'Medium', 'Red', '/3.jpg'),
+    ('Rainbow Unicorn Slippers', 19.99, 'Slippers that make you feel like you are walking on rainbows', 'One Size Fits All', 'Rainbow', '/4.jpg');
 
 -- Associate Products with Categories
 INSERT INTO product_category (product_id, category_id)
