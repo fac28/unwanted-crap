@@ -1,5 +1,8 @@
 import { Display_products } from '@/components/Display_products';
-import { retrieveUniqueProducts } from '@/models/products';
+import {
+  getAllProductIds,
+  retrieveUniqueProducts,
+} from '@/models/products';
 import Link from 'next/link';
 
 export default async function Home() {
