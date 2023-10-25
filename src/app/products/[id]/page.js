@@ -37,7 +37,7 @@ export default function ProductDetail({ params }) {
       <p>Name: {selectedProduct.name}</p>
       <p>Price: £{selectedProduct.price}</p>
       <p>Description: {selectedProduct.description}</p>
-      {hasVariants ? 
+      {hasVariants ? (
         <>
           <ul>
             {allVariants.map((variant) => (
