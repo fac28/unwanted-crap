@@ -150,6 +150,26 @@ a {
   text-decoration: none;
 }
 
+.search, h1, h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="text"] {
+  margin:10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+input[type="text"]:focus {
+  border: 1px solid #007bff;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

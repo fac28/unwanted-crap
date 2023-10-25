@@ -22,7 +22,7 @@ export const Display_products = ({ productsInfo }) => {
 
   return (
     <>
-      <div>
+      <div className="search">
         <input
           type="text"
           placeholder="Search by product name"
