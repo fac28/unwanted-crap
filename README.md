@@ -8,12 +8,6 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -25,7 +19,8 @@ Check out our [Unwanted-crap](https://unwanted-crap.fly.dev) for more details.
 
 ## SQL Table Post Schema
 
-TO BE ADDED
+<img width="399" alt="image" src="https://github.com/fac28/unwanted-crap/assets/44486576/68eebdef-b366-42cc-ab1f-744b23caa488">
+
 
 ## Testing
 
