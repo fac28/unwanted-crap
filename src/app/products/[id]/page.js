@@ -32,14 +32,21 @@ export default function ProductDetail({ params }) {
   // variant id is the unique product id
 
   return (
-    <div>
-      <h1>Details about product {params.id}</h1>
-      <p>Name: {selectedProduct.name}</p>
+    <div className="card-details">
+      <h1>{selectedProduct.name}</h1>
       <p>Price: £{selectedProduct.price}</p>
       <p>Description: {selectedProduct.description}</p>
       {hasVariants ? (
         <>
-          <ul>
+          <div>
+            <Image
+              src={allVariants[0].image}
+              alt={allVariants[0].name}
+              width={200}
+              height={100}
+            />
+          </div>
+          <ul className="variants">
             {allVariants.map((variant) => (
               <li key={variant.colour}>
                 <Link href={`/products/${params.id}/${variant.id}`}>
@@ -48,33 +55,16 @@ export default function ProductDetail({ params }) {
               </li>
             ))}
           </ul>
-          <ul>
-            <li key={allVariants[0].id}>
-              <Link
-                href={`/products/${params.id}/${allVariants[0].id}`}
-              >
-                <div>
-                  <p>Colour: {allVariants[0].colour}</p>
-                  <Image
-                    src={allVariants[0].image}
-                    alt={allVariants[0].name}
-                    width={200}
-                    height={100}
-                  />
-                </div>
-              </Link>
-            </li>
-          </ul>
         </>
       ) : (
         <div>
-          <p>Colour: {selectedProduct.colour}</p>
           <Image
             src={selectedProduct.image}
             alt={selectedProduct.name}
             width={200}
             height={100}
           />
+          <p>Colour: {selectedProduct.colour}</p>
         </div>
       )}
     </div>

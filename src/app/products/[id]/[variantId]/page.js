@@ -11,12 +11,11 @@ export default function VariantDetail({ params }) {
   }
 
   return (
-    <div>
-      <Link href={`/products/${params.id}`}>
-        <h1>Variant {params.variantId} Details</h1>
-      </Link>
-      <p>Colour: {variantDetails.colour}</p>
-      <p>Size: {variantDetails.size} </p>
+    <div className="card-details">
+      <div>
+        <h2>{variantDetails.colour}</h2>
+        <Link href={`/products/${params.id}`}>Back to product</Link>
+      </div>
       <Image
         src={variantDetails.image}
         alt={variantDetails.name}
