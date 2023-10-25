@@ -10,7 +10,7 @@ const get_variant_count = db.prepare(/*sql*/ `
 `);
 
 function retrieveVariants() {
-    return get_variant_count.all().map((row) => row.name);
+  return get_variant_count.all().map((row) => row.name);
 }
 
 const get_variant_details = db.prepare(/*sql*/ `
@@ -18,10 +18,10 @@ const get_variant_details = db.prepare(/*sql*/ `
     FROM products
     WHERE name = ?
 
-`)
+`);
 
 function retrieveVariantDetails(name) {
-    return get_variant_details.all(name);
+  return get_variant_details.all(name);
 }
 
-module.exports = { retrieveVariants, retrieveVariantDetails }
+module.exports = { retrieveVariants, retrieveVariantDetails };

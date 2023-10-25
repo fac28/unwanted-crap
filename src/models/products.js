@@ -1,7 +1,7 @@
 const db = require('../../database/db.js');
 
 // list unique product names
-const get_unique_product_names = db.prepare(/*sql*/ `
+const get_unique_product = db.prepare(/*sql*/ `
     SELECT
       DISTINCT name,
       price,
@@ -10,29 +10,30 @@ const get_unique_product_names = db.prepare(/*sql*/ `
       colour,
       image
     FROM products
+    GROUP BY name
 `);
 
 function retrieveUniqueProductNames() {
-  return get_unique_product_names.all().map((row) => row.name);
+  return get_unique_product.all().map((row) => row.name);
 }
 
 function retrieveUniqueProducts() {
-  const uniqueProducts = get_unique_product_names.all();
+  const uniqueProducts = get_unique_product.all();
   return uniqueProducts.map((row) => ({
     ...row,
   }));
 }
 
-// get info of the first variant of a product
-const get_first_variant = db.prepare(/*sql*/ `
-    SELECT id, name, price, image
-      FROM products
-      WHERE name = ?
-      LIMIT 1;
+const get_all_products = db.prepare(/*sql*/ `
+    SELECT id, name, price, description, size, colour, image
+    FROM products
 `);
 
-function getProductInfo(productName) {
-  return get_first_variant.get(productName);
+function getAllProducts() {
+  const allProducts = get_all_products.all();
+  return allProducts.map((row) => ({
+    ...row,
+  }));
 }
 
 // Retrieve all product IDs
@@ -66,9 +67,9 @@ function retrieveProductData(id) {
 
 module.exports = {
   retrieveUniqueProductNames,
-  getProductInfo,
   getAllProductIds,
   getAllProductIds,
   retrieveProductData,
-  retrieveUniqueProducts
+  retrieveUniqueProducts,
+  getAllProducts,
 };
