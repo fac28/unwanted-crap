@@ -16,7 +16,7 @@ export const Display_products = ({ productsInfo }) => {
   return (
     <div className="card">
       {productsInfo.map((product) => (
-        <div key={uuidv4()}>
+        <div key={uuidv4()} className="card-product">
           <Image
             priority
             src={product.image}
@@ -24,9 +24,11 @@ export const Display_products = ({ productsInfo }) => {
             height={100}
             alt={product.name}
           />
-          <p>{product.name}</p>
-          <p>{product.price}</p>
-          <button onClick={() => addToBasket(product)}>Buy</button>
+          <div className="card-product-infos">
+            <h2>{product.name}</h2>
+            <p>£{product.price}</p>
+            <button onClick={() => addToBasket(product)}>Buy</button>
+          </div>
         </div>
       ))}
     </div>
