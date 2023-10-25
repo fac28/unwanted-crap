@@ -2,25 +2,6 @@
 
 import { createContext, useReducer } from "react";
 
-// type StateType = {
-//   articles: Object[];
-// };
-
-// type ActionType = {
-//   type: "ADD" | "REMOVE" | "RESET";
-//   article
-// };
-
-// type AddAction = {
-//   type: "ADD";
-//   article: Object   
-// }
-
-// type RemoveAction = {
-//   type: "REMOVE";
-//   articleName: string;   
-// }
-
 const initialBasket = {
   articles: [],
 };

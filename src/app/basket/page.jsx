@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { BasketContext } from '@/context/basket.context';
 import { useContext } from 'react';
 
+const { v4: uuidv4 } = require('uuid');
+
 export default function Basket() {
   const { state, dispatch } = useContext(BasketContext);
 
@@ -12,7 +14,8 @@ export default function Basket() {
       <h2>Your Basket</h2>
       <div className="card">
         {state.articles.map((product) => (
-          <div key={product.id}>
+          
+          <div key={uuidv4()} className="card-product">
             <Image
               priority
               src={product.image}
