@@ -1,4 +1,5 @@
-import { retrieveUniqueProducts } from '@/models/products';
+import { getAllProducts } from '@/models/products';
+
 import {
   retrieveVariants,
   retrieveVariantDetails,
@@ -8,7 +9,7 @@ import Link from 'next/link';
 
 export default function ProductDetail({ params }) {
   // Retrieve unique product information
-  const productInfo = retrieveUniqueProducts();
+  const productInfo = getAllProducts();
 
   // Find the selected product by productId
   const selectedProduct = productInfo[params.id];
@@ -36,7 +37,7 @@ export default function ProductDetail({ params }) {
       <p>Name: {selectedProduct.name}</p>
       <p>Price: £{selectedProduct.price}</p>
       <p>Description: {selectedProduct.description}</p>
-      {hasVariants ? (
+      {hasVariants ? 
         <>
           <ul>
             {allVariants.map((variant) => (
