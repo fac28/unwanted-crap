@@ -70,5 +70,5 @@ module.exports = {
   getAllProductIds,
   getAllProductIds,
   retrieveProductData,
-  retrieveUniqueProducts
+  retrieveUniqueProducts,
 };

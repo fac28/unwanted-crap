@@ -40,7 +40,11 @@ export default function ProductDetail({ params }) {
         <>
           <ul>
             {allVariants.map((variant) => (
-              <li key={variant.colour}><Link href={`/products/${params.id}/${variant.id}`}>{variant.colour}</Link></li>
+              <li key={variant.colour}>
+                <Link href={`/products/${params.id}/${variant.id}`}>
+                  {variant.colour}
+                </Link>
+              </li>
             ))}
           </ul>
           <ul>
