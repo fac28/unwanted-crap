@@ -1,3 +1,5 @@
+Unwnated-Crap.com  Where you can cash in on the junk your ex-lovers left behind! It's the ultimate treasure trove of stuff no one gives a hoot about anymore, but you can turn into sweet, sweet moolah. 🤑💩
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
