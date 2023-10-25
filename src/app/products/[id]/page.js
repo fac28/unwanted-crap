@@ -1,4 +1,5 @@
-import { retrieveUniqueProducts } from '@/models/products';
+import { getAllProducts } from '@/models/products';
+
 import {
   retrieveVariants,
   retrieveVariantDetails,
@@ -8,7 +9,7 @@ import Link from 'next/link';
 
 export default function ProductDetail({ params }) {
   // Retrieve unique product information
-  const productInfo = retrieveUniqueProducts();
+  const productInfo = getAllProducts();
 
   // Find the selected product by productId
   const selectedProduct = productInfo[params.id];
@@ -37,23 +38,34 @@ export default function ProductDetail({ params }) {
       <p>Price: £{selectedProduct.price}</p>
       <p>Description: {selectedProduct.description}</p>
       {hasVariants ? (
-        <ul>
-          {allVariants.map((variant) => (
-            <li key={variant.id}>
-              <Link href={`/products/${params.id}/${variant.id}`}>
+        <>
+          <ul>
+            {allVariants.map((variant) => (
+              <li key={variant.colour}>
+                <Link href={`/products/${params.id}/${variant.id}`}>
+                  {variant.colour}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <ul>
+            <li key={allVariants[0].id}>
+              <Link
+                href={`/products/${params.id}/${allVariants[0].id}`}
+              >
                 <div>
-                  <p>Colour: {variant.colour}</p>
+                  <p>Colour: {allVariants[0].colour}</p>
                   <Image
-                    src={variant.image}
-                    alt={variant.name}
+                    src={allVariants[0].image}
+                    alt={allVariants[0].name}
                     width={200}
                     height={100}
                   />
                 </div>
               </Link>
             </li>
-          ))}
-        </ul>
+          </ul>
+        </>
       ) : (
         <div>
           <p>Colour: {selectedProduct.colour}</p>
