@@ -16,7 +16,7 @@ VALUES
     ('Stained T-Shirt', 9.99, 'Comfortable cotton T-shirt', 'Medium', 'Red', '/3.jpg'),
     ('Rainbow Unicorn Slippers', 19.99, 'Slippers that make you feel like you are walking on rainbows', 'One Size Fits All', 'Rainbow', '/4.jpg'),
     ('Cable knit jumper', 50, 'My nan gave me this jumper. Unidentifiable smell.', 'M', 'Too many', '/5.jpeg'),
-    ('Oktoberfest', -5.00, 'Oktoberfest outfit. Only worn thrice. Not washable.', 'One Size Fits All Only If You Are Tiny', 'German Colours?', '/6.jpeg'),
+    ('Oktoberfest', 5.34, 'Oktoberfest outfit. Only worn thrice. Not washable.', 'One Size Fits All Only If You Are Tiny', 'German Colours?', '/6.jpeg'),
     ('Peanuts', 7.62, 'I`m allergic so I can`t finish them. The rest of the pack is in perfeclty good condition. ', 'Small', 'Beige', '/7.jpeg');
 
 -- Associate Products with Categories
