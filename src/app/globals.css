@@ -1,9 +1,10 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono',
+    'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace',
+    'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New',
+    monospace;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -94,20 +95,19 @@ body {
     )
     rgb(var(--background-start-rgb));
   margin: 0 1rem;
-
 }
 
 .card {
-  display:grid;
+  display: grid;
   border-radius: var(--border-radius);
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 2em 2em;
   justify-items: stretch;
   grid-template-areas:
-    ". ."
-    ". ."
-    ". .";
+    '. .'
+    '. .'
+    '. .';
   margin: 1rem 0;
 }
 
@@ -163,7 +163,9 @@ body {
   margin-top: 8px;
 }
 
-.card-product p, .card-details p, .variants li {
+.card-product p,
+.card-details p,
+.variants li {
   font-size: 1rem;
   margin-bottom: 0;
   margin-top: 1rem;
@@ -186,24 +188,37 @@ body {
   align-items: center;
 }
 
-.search, h1, h2 {
+.search,
+h1,
+h2 {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-input[type="text"] {
-  margin:10px;
+input[type='text'] {
+  margin: 10px;
   padding: 8px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 15px;
   font-size: 16px;
   outline: none;
+  background-color: #cccccc81;
   transition: border 0.2s;
 }
 
-input[type="text"]:focus {
-  border: 1px solid #007bff;
+input[type='text']:focus {
+  background-color: #ccccccd8;
+}
+
+html {
+  font-family: manrope;
+}
+
+h1 {
+  font-family: inter;
+  font-size: 2.5rem;
+  font-weight: 900;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -216,14 +231,13 @@ input[type="text"]:focus {
 } */
 
 @media (max-width: 768px) {
-
   .card {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
-      "."
-      "."
-      ".";
+      '.'
+      '.'
+      '.';
   }
 
   .card-product {
