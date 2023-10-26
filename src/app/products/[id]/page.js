@@ -49,6 +49,7 @@ export default function ProductDetail({ params }) {
               height={100}
             />
           </div>
+          <p>Select colour:</p>
           <ul className="variants">
             {allVariants.map((variant) => (
               <li key={variant.colour}>
