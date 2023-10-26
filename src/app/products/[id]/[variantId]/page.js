@@ -1,6 +1,7 @@
 import { retrieveProductData } from '@/models/products';
 import Image from 'next/image';
 import Link from 'next/link';
+import Navbar from '@/components/Navbar';
 
 export default function VariantDetail({ params }) {
   const variantDetails = retrieveProductData(params.variantId);
@@ -12,6 +13,7 @@ export default function VariantDetail({ params }) {
 
   return (
     <div className="card-details">
+      <Navbar />
       <div>
         <h2>{variantDetails.colour}</h2>
         <Link href={`/products/${params.id}`}>Back to product</Link>

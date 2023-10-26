@@ -1,15 +1,14 @@
 import { Display_products } from '@/components/Display_products';
 import { retrieveUniqueProducts } from '@/models/products';
-import Link from 'next/link';
+import Navbar from '@/components/Navbar';
 
 export default async function Home() {
   const productsInfo = retrieveUniqueProducts();
 
   return (
     <main>
-      <h1>Unwanted Crap</h1>
+      <Navbar />
       <Display_products productsInfo={productsInfo} />
-      <Link href="/basket">Basket</Link>
     </main>
   );
 }

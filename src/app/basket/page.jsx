@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Navbar from '@/components/Navbar';
 
 import { BasketContext } from '@/context/basket.context';
 import { useContext } from 'react';
@@ -11,10 +12,11 @@ export default function Basket() {
 
   return (
     <div className="basket">
+      <Navbar />
       <h2>Your Basket</h2>
       <div className="card">
         {state.articles.map((product) => (
-          
+
           <div key={uuidv4()} className="card-product">
             <Image
               priority
