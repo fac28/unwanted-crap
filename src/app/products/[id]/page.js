@@ -8,6 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import { Add_item_basket } from '@/components/Add_item_basket';
+import styles from './page.module.css';
 
 export default function ProductDetail({ params }) {
   // Retrieve unique product information
@@ -34,14 +35,20 @@ export default function ProductDetail({ params }) {
   // variant id is the unique product id
 
   return (
+
+    <div className="card-details flex">
+      <h1>{selectedProduct.name}</h1>
+      <Link href={`/`}>All products</Link>
+
     <div className="card-details">
       <Navbar />
       <h2>{selectedProduct.name}</h2>
+
       <p>Price: £{selectedProduct.price}</p>
       <p>Description: {selectedProduct.description}</p>
       {hasVariants ? (
         <>
-          <div>
+          <div className="flex">
             <Image
               src={allVariants[0].image}
               alt={allVariants[0].name}
@@ -59,20 +66,31 @@ export default function ProductDetail({ params }) {
               </li>
             ))}
           </ul>
+
+
+          <Link className={styles.basketLink} href={'/basket'}>
+            🧺
+          </Link>
+
           <Add_item_basket product={selectedProduct} />
+
         </>
       ) : (
-        <div>
-          <Image
-            src={selectedProduct.image}
-            alt={selectedProduct.name}
-            width={200}
-            height={100}
-          />
-          <p>Colour: {selectedProduct.colour}</p>
-          <Add_item_basket product={selectedProduct} />
-          <Link href={'/basket'}>Basket</Link>
-        </div>
+        <>
+          <div className="flex">
+            <Image
+              src={selectedProduct.image}
+              alt={selectedProduct.name}
+              width={200}
+              height={100}
+            />
+            <p>Colour: {selectedProduct.colour}</p>
+            <Add_item_basket product={selectedProduct} />
+          </div>
+          <Link className={styles.basketLink} href={'/basket'}>
+            🧺
+          </Link>
+        </>
       )}
     </div>
   );

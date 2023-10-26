@@ -11,13 +11,16 @@ export default function Basket() {
   const { state, dispatch } = useContext(BasketContext);
 
   return (
-    <div className="basket">
-      <Navbar />
-      <h2>Your Basket</h2>
-      <div className="card">
-        {state.articles.map((product) => (
 
-          <div key={uuidv4()} className="card-product">
+    <div className="basket flex">
+
+      <Navbar />
+
+      <h2>Your Basket</h2>
+      <div className="card flex">
+        {state.articles.map((product) => (
+div key={uuidv4()} className="card-product bask">
+
             <Image
               priority
               src={product.image}
@@ -27,7 +30,7 @@ export default function Basket() {
             />
             <p>{product.name}</p>
             <p>{product.price}</p>
-            <button
+            <button className="pad padBas"
               onClick={() =>
                 dispatch({
                   type: 'REMOVE',
@@ -40,7 +43,7 @@ export default function Basket() {
           </div>
         ))}
       </div>
-      <button
+      <button className="pad"
               onClick={() =>
                 dispatch({
                   type: 'RESET',

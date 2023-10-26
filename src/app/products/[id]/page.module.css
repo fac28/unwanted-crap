@@ -212,6 +212,8 @@
   right: 10px;
 }
 
+
+
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
   .grid {
@@ -220,14 +222,14 @@
 }
 
 /* @media (prefers-color-scheme: dark) {
-  .vercelLogo {
-    filter: invert(1);
-  }
-
-  .logo {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
-  }
-} */
+    .vercelLogo {
+      filter: invert(1);
+    }
+  
+    .logo {
+      filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+    }
+  } */
 
 @keyframes rotate {
   from {
