@@ -61,6 +61,10 @@
   transition: transform 200ms;
 }
 
+.egg {
+  color: red;
+}
+
 .card h2 {
   font-weight: 600;
   margin-bottom: 0.7rem;
