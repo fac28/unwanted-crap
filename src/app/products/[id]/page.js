@@ -6,6 +6,7 @@ import {
 } from '@/models/variants';
 import Image from 'next/image';
 import Link from 'next/link';
+import Navbar from '@/components/Navbar';
 import { Add_item_basket } from '@/components/Add_item_basket';
 
 export default function ProductDetail({ params }) {
@@ -34,8 +35,8 @@ export default function ProductDetail({ params }) {
 
   return (
     <div className="card-details">
-      <h1>{selectedProduct.name}</h1>
-      <Link href={`/`}>All products</Link>
+      <Navbar />
+      <h2>{selectedProduct.name}</h2>
       <p>Price: £{selectedProduct.price}</p>
       <p>Description: {selectedProduct.description}</p>
       {hasVariants ? (
@@ -58,8 +59,7 @@ export default function ProductDetail({ params }) {
               </li>
             ))}
           </ul>
-
-          <Link href={'/basket'}>Basket</Link>
+          <Add_item_basket product={selectedProduct} />
         </>
       ) : (
         <div>
