@@ -6,6 +6,7 @@ import {
 } from '@/models/variants';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Add_item_basket } from '@/components/Add_item_basket';
 
 export default function ProductDetail({ params }) {
   // Retrieve unique product information
@@ -43,7 +44,7 @@ export default function ProductDetail({ params }) {
             <Image
               src={allVariants[0].image}
               alt={allVariants[0].name}
-              width={200}
+              width={100}
               height={100}
             />
           </div>
@@ -56,6 +57,8 @@ export default function ProductDetail({ params }) {
               </li>
             ))}
           </ul>
+          <Add_item_basket product={selectedProduct} />
+          <Link href={'/basket'}>Basket</Link>
         </>
       ) : (
         <div>
@@ -66,6 +69,8 @@ export default function ProductDetail({ params }) {
             height={100}
           />
           <p>Colour: {selectedProduct.colour}</p>
+          <Add_item_basket product={selectedProduct} />
+          <Link href={'/basket'}>Basket</Link>
         </div>
       )}
     </div>

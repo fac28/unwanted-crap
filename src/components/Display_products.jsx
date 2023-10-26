@@ -1,19 +1,16 @@
 'use client';
 
 import Image from 'next/image';
-import { useContext, useState } from 'react';
-import { BasketContext } from '@/context/basket.context';
+import { useState } from 'react';
 import Link from 'next/link';
+
 //Generating unique keys
 const { v4: uuidv4 } = require('uuid');
 
 export const Display_products = ({ productsInfo }) => {
-  const { dispatch } = useContext(BasketContext);
+
   const [searchText, setSearchText] = useState('');
 
-  const addToBasket = (product) => {
-    dispatch({ type: 'ADD', article: product });
-  };
 
   const filteredProducts = productsInfo.filter((product) => {
     const regex = new RegExp(searchText, 'i'); // 'i' makes the search case-insensitive
@@ -44,9 +41,6 @@ export const Display_products = ({ productsInfo }) => {
               <div className="card-product-infos">
                 <h2>{product.name}</h2>
                 <p>£{product.price}</p>
-                <button onClick={() => addToBasket(product)}>
-                  Buy
-                </button>
               </div>
             </div>
           </Link>
