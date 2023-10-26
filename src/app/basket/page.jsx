@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Navbar from '@/components/Navbar';
 
 import { BasketContext } from '@/context/basket.context';
 import { useContext } from 'react';
@@ -10,12 +11,16 @@ export default function Basket() {
   const { state, dispatch } = useContext(BasketContext);
 
   return (
+
     <div className="basket flex">
+
+      <Navbar />
+
       <h2>Your Basket</h2>
       <div className="card flex">
         {state.articles.map((product) => (
-          
-          <div key={uuidv4()} className="card-product bask">
+div key={uuidv4()} className="card-product bask">
+
             <Image
               priority
               src={product.image}
