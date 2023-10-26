@@ -80,29 +80,12 @@
   margin: 0;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-  margin: 0 1rem;
-}
-
 .card {
   display: grid;
   border-radius: var(--border-radius);
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 2em 2em;
+  gap: 4em 2em;
   justify-items: stretch;
   grid-template-areas:
     '. .'
@@ -119,14 +102,21 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  max-width: 17rem;
+  transition: transform 0.3s; /* Add a smooth transition effect */
+}
+
+.card-product:hover {
+  transform: scale(1.1); /* Enlarge the card on hover */
 }
 
 .card-details {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   height: 100%;
   align-items: center;
-  margin: 1rem;
+  margin: 5rem auto;
   padding: 2rem;
+  max-width: 1000px;
 }
 
 .card-product img {
@@ -146,7 +136,7 @@ body {
 
 .card-details a {
   color: inherit;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .card-product h2 {
@@ -220,6 +210,66 @@ h1 {
   font-size: 2.5rem;
   font-weight: 900;
 }
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pad {
+  background-color: rgb(204, 50, 99);
+  /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  margin: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition-duration: 150ms;
+}
+
+.pad:hover {
+  background-color: rgba(204, 50, 99, 0.816);
+}
+
+.pad:active {
+  background-color: rgba(204, 50, 99, 0.592);
+  transform: translateY(7px);
+}
+
+body {
+  background: linear-gradient(to bottom, #3493e68e, #ec6ead72);
+}
+
+html {
+  height: 100%;
+}
+
+.bask {
+  max-width: 700px;
+}
+
+.padBas {
+  font-size: 0.7rem;
+  width: 50px;
+  height: 30px;
+  padding: 2px;
+  margin: 10px;
+}
+
+.card-product p {
+  margin-left: 5px;
+}
+
+/* .basketLink {
+  font-size: 5rem;
+} */
 
 /* @media (prefers-color-scheme: dark) {
   html {

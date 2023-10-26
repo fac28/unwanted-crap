@@ -1,6 +1,7 @@
 import { Display_products } from '@/components/Display_products';
 import { retrieveUniqueProducts } from '@/models/products';
 import Link from 'next/link';
+import styles from './page.module.css';
 
 export default async function Home() {
   const productsInfo = retrieveUniqueProducts();
@@ -8,8 +9,12 @@ export default async function Home() {
   return (
     <main>
       <h1>Unwanted Crap</h1>
-      <Display_products productsInfo={productsInfo} />
-      <Link href="/basket">Basket</Link>
+      <Link className={styles.basketLink} href="/basket">
+        🧺
+      </Link>
+      <div className="flex">
+        <Display_products productsInfo={productsInfo} />
+      </div>
     </main>
   );
 }
